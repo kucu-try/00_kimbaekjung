@@ -110,29 +110,6 @@
     </div>
 </div>
 <!--******************************** 스크립트 *********************************************8-->
-<script>
-    document.getElementById('logoutButton').addEventListener('click', function() {
-        document.querySelector('.popup').style.display = 'block';
-    });
-    // 확인 버튼에 대한 이벤트 리스너 추가
-    document.querySelector('.confirmBtn').addEventListener('click', function() {
-        document.querySelector('.popup').style.display = 'none';
-        // 여기에서 확인 버튼을 눌렀을 때의 로직을 추가.
 
-    });
-
-    // 취소 버튼에 대한 이벤트 리스너 추가
-    document.querySelector('.cancelBtn').addEventListener('click', function() {
-        document.querySelector('.popup').style.display = 'none';
-        // 여기에서 취소 버튼을 눌렀을 때의 로직을 추가.
-
-    });
-
-    document.addEventListener('click', function (event) {
-        if (event.target !== document.querySelector('.popup') && !document.querySelector('.popup').contains(event.target) && event.target !== document.getElementById('logoutButton')) {
-            document.querySelector('.popup').style.display = 'none';
-        }
-    });
-</script>
 </body>
 </html>
