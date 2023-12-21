@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../static/css/global.css">
-    <link rel="stylesheet" href="../static/css/propose_write.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/logout.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
-
 <body>
 <header class="navbox">
     <nav>
@@ -29,7 +28,7 @@
             </li>
             <li>
                 <button class="student-management">
-                    <a href="#">학생관리</a>
+                    <a href="/school/student_manage">학생관리</a>
                 </button>
             </li>
             <li>
@@ -45,7 +44,7 @@
 
 <div id="fiveFrame">
 
-    <a href="mypage_info.html" id="studentInfo">
+    <a href="/school/mypage_info" id="studentInfo">
         <div id="iconTag1">
             <i class="bi-info-circle"></i>
         </div>
@@ -53,28 +52,28 @@
     </a>
 
 
-    <a href="call_info_notification.html" id="call">
+    <a href="/school/call_info_notification" id="call">
         <div id="iconTag2">
             <i class="bi-whatsapp"></i>
         </div>
         <div id="callWord">고객센터</div>
     </a>
 
-    <a href="restart_info.html" id="restart">
+    <a href="/school/restart_info" id="restart">
         <div id="iconTag3">
             <i class="bi-arrow-clockwise"></i>
         </div>
         <div id="restartWord">초기화</div>
     </a>
 
-    <a href="logout_info.html" id="logout">
+    <a href="/school/logout_info" id="logout">
         <div id="iconTag4">
             <i class="bi-box-arrow-right"></i>
         </div>
         <div id="logoutWord">로그아웃</div>
     </a>
 
-    <a href="destroy_info.html" id="destroy">
+    <a href="/school/destroy_info" id="destroy">
         <div id="iconTag5">
             <i class="bi-slash-circle"></i>
         </div>
@@ -82,26 +81,15 @@
     </a>
 </div>
 
-
-
 <article id="article">
-    <h2>제목</h2>
-    <textarea id="contentTitle" rows="1" cols="1"  maxlength="50"></textarea>
-    <h2>내용</h2>
-    <textarea id="content" rows="4" cols="50"></textarea>
-    <div id="pwdAndWrite">
-        <h2>비밀번호</h2>
-        <input type="password" id="password"/>
-        <button>작 성</button>
-    </div>
+    <div id="list">로그아웃 하시겠습니까?</div>
+    <button id="logoutButton">확인</button>
 </article>
-
-
 
 <footer id=footers>
     <div id = email>kbjcom@google.com</div>
 
-    <img src="../static/img/bell.png" alt="school Bell" id="bell">
+    <img src="/img/bell.png" alt="school Bell" id="bell">
     <div id =footerTitle>학교 종이 땡땡땡</div>
 
     <div id="number">call : 010-6411-9074</div>
@@ -111,5 +99,39 @@
         <div>All rights reserved.</div>
     </div>
 </footer>
+
+<!--*****************************팝업*********************************-->
+<div class="popup">
+    <h3> 로그아웃하시겠습니까?</h3>
+    <div class="buttons">
+        <button class="confirmBtn">확인</button>
+        <button class="cancelBtn">취소</button>
+    </div>
+</div>
+<!--******************************** 스크립트 *********************************************8-->
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        document.querySelector('.popup').style.display = 'block';
+    });
+    // 확인 버튼에 대한 이벤트 리스너 추가
+    document.querySelector('.confirmBtn').addEventListener('click', function() {
+        document.querySelector('.popup').style.display = 'none';
+        // 여기에서 확인 버튼을 눌렀을 때의 로직을 추가.
+
+    });
+
+    // 취소 버튼에 대한 이벤트 리스너 추가
+    document.querySelector('.cancelBtn').addEventListener('click', function() {
+        document.querySelector('.popup').style.display = 'none';
+        // 여기에서 취소 버튼을 눌렀을 때의 로직을 추가.
+
+    });
+
+    document.addEventListener('click', function (event) {
+        if (event.target !== document.querySelector('.popup') && !document.querySelector('.popup').contains(event.target) && event.target !== document.getElementById('logoutButton')) {
+            document.querySelector('.popup').style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>

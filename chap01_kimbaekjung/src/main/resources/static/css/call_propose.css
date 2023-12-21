@@ -39,7 +39,7 @@
 #asideBtn{
   width: 180px;
   height: 35px;
-  left: 40px;
+  left: 80px;
   top: 360px;
   background-color: white;
   position: absolute;
@@ -59,7 +59,7 @@
 #asideBtn2{
   width: 180px;
   height: 35px;
-  left: 40px;
+  left: 80px;
   top: 400px;
   position: absolute;
   background: #FFF8E4;
