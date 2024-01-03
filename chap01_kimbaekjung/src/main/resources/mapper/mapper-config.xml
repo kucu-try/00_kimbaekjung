@@ -10,9 +10,9 @@
 
 
     <mappers>
-        <mapper resource="mapper/config/mapper.xml" />
-        <mapper resource="mapper/config/mapper1.xml" />
-        <mapper resource="mapper/config/manage.xml" />
+        <mapper resource="mapper/school/mapper.xml" />
+        <mapper resource="mapper/school/mapper1.xml" />
+        <mapper resource="mapper/manage/manage.xml" />
     </mappers>
 
 </configuration>

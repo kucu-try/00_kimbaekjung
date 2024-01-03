@@ -7,7 +7,7 @@
     <resultMap id="notiResult" type="com.ohgiraffers.kimbaekjung.school.dto.NotificationDTO">
         <id property="code" column="NOTICE_CODE"/>
         <result property="name" column="NOTICE_NAME"/>
-        <result property="noticeDate" column="NOTICE_DATE"/>
+        <result property="noticeDate" column="REGIST_DATE"/>
     </resultMap>
 
 
@@ -15,7 +15,7 @@
         SELECT
         NOTICE_CODE,
         NOTICE_NAME,
-        NOTICE_DATE
+        REGIST_DATE
         FROM NOTICE
     </select>
 

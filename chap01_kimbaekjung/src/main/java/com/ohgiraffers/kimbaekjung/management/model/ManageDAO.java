@@ -1,6 +1,6 @@
-package com.ohgiraffers.kimbaekjung.school.model;
+package com.ohgiraffers.kimbaekjung.management.model;
 
-import com.ohgiraffers.kimbaekjung.school.dto.manageDTO;
+import com.ohgiraffers.kimbaekjung.management.dto.manageDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

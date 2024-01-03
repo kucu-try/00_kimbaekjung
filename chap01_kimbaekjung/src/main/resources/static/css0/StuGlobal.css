@@ -27,95 +27,69 @@ a, a:link, a:visited {
 }
 
 /*************************************************네비 바******************************************************/
-li {
+li{
     list-style: none;
 }
-
-header .navbox {
+header .navbox{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding-top: 0%;
-    position: fixed; /* 수정: header를 고정시키기 위해 position 속성 추가 */
-    top: 0; /* 수정: header의 상단에 위치하도록 top 속성 추가 */
-    z-index: 1;
-    color: white;
-}
 
-header nav {
+}
+header{
+    position: fixed;
+    color: white;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+
+}
+header nav{
     display: flex;
-    justify-content: space-between;
-    align-items: top;
+    justify-content:space-between;
+    align-items:top;
     width: 100%;
 }
-
-header nav ul {
+header nav ul{
     display: flex;
     align-items: top;
 }
-
-header nav ul li {
+header nav ul li{
     padding-left: 10px;
     padding-top: 0;
 }
-
-header button {
-    background: transparent;
-    border: none;
+header button{
+    background:transparent;
+    border: 0;
     cursor: pointer;
-    background: rgba(199.66, 217.81, 201.51, 0.47);
+    background-color: rgba(0,47,4,1);
     width: 230px;
     height: 70px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
-
-header h1 button {
+header h1 button{
     font-size: 70px;
-    color: rgba(255, 225, 80, 1);
-    background-color: rgb(255, 255, 255);
+    color: rgba(255,225,80,1);
     width: 500px;
     height: 100px;
     text-align: left;
     padding-left: 1rem;
+    background-color: white;
 }
-
-
-.ranking {
+header nav ul li button{
     font-size: 35px;
     color: rgb(255, 255, 255);
-    background: rgba(199.66, 217.81, 201.51, 0.5);
+    background-color: rgba(0,47,4,1);
     overflow: hidden;
 }
-.calendar {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    background: rgba(199.66, 217.81, 201.51, 0.5);
-    overflow: hidden;
-}
-.student-management {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    background: #003005;
-    overflow: hidden;
-}
-#studentManagement{
-    background: #003005;
+header nav ul li button a{
+    background-color: rgba(0,47,4,1);
 }
 
-.mypage {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    background: rgba(199.66, 217.81, 201.51, 0.5);
-    overflow: hidden;
-
-}
-
-
-header nav ul li button a {
-    background: rgba(233, 239, 233, 0.5);
-}
 /*******************************************************************************************************/
 #barTitle{
     width: 16%;
@@ -192,7 +166,6 @@ header nav ul li button a {
 #asideSTU{
     display: flex;
     flex-direction: column;
-    gap: 30px;
     width: 16.7%;
     height: 100%;
     opacity: 1;
@@ -208,123 +181,83 @@ header nav ul li button a {
     justify-content: center;
 }
 
-#asideSTU div{
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    background-color: rgba(255,247,227,1);
-    overflow: hidden;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 5px;
-    display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: center;
-    border-bottom: 1px solid black;
-}
-
-
-#asideSTU button{
-    font-size: 30px;
-    font-weight: 400;
-    width: 100%;
-    height: 40px;
-    border: none;
-}
-
-#asideSTU button.special{
-    height: 100px;
-    line-height:160px;
-}
 
 #section1{
-    width: 30%;
-    height: 40px;
-    background: rgba(255,247,227,1);
-    opacity: 1;
-    position: absolute;
     top: 0;
-    left: 16.7%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height:320px;
 }
 
 #section1 div{
-    width: 20%;
-    height: 40px;
+    height: 64px;
     background: rgba(255,247,227,1);
-    opacity: 1;
-    text-align: center;
-    line-height: 40px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center;
 }
 
+
 #section2{
-    width: 30%;
-    height: 45px;
-    opacity: 1;
-    top: 40px;
+    top: 0;
+    left: 50%;
     position: absolute;
-    left: 16.7%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    width: 50%;
+    height:320px;
 }
 
 #section2 div{
-    width: 20%;
-    height: 45px;
-    opacity: 1;
-    top: 40px;
-    text-align: center;
-    line-height: 45px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    height: 64px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center;
 }
 
 #attendList{
-    width: 53.3%;
+    width: 100%;
     height: 40px;
     background: rgba(255,247,227,1);
     opacity: 1;
     position: absolute;
-    top: 0;
-    left: 46.7%;
+    top: 39.5%;
+    left: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     font-weight: bold;
     line-height: 45px;
     border-bottom: 1px solid black;
-    border-right: 2px solid black;
     justify-content: center; /* 수평 정렬을 위한 추가 */
 }
 
 #attendListInput{
-    width: 53.3%;
-    height: 45px;
+    width: 100%;
+    height: 400px;
     opacity: 1;
     position: absolute;
-    top: 40px;
-    left: 46.7%;
+    top: 45%;
+    left: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     text-align: center;
     line-height: 45px;
-    border-bottom: 1px solid black;
-    border-right: 2px solid black;
+
 }
 
 #section3{
     width: 41%;
-    height: 400px;
+    height: 430px;
     position: absolute;
     left: 16.7%;
-    top: 85px;
+    top: 0;
     border-right: 1px solid black;
 }
 
@@ -344,7 +277,7 @@ header nav ul li button a {
 
 #section3 div.praise{
     width: 100%;
-    height: 360px;
+    height: 390px;
     position: absolute;
     background-color: white;
     left: 0;
@@ -357,9 +290,9 @@ header nav ul li button a {
 
 #section4{
     width: 42.3%;
-    height: 400px;
+    height: 430px;
     left: 57.7%;
-    top: 85px;
+    top: 0;
     position: absolute;
 
 }
@@ -376,13 +309,19 @@ header nav ul li button a {
     background: rgba(255,247,227,1);
     border-bottom: 1px solid black;
     border-right: 2px solid black;
-
+}
+#mySelect{
+    width: 70px;
+    height: 25px;
+    left: 58%;
+    top: 20%;
+    position: absolute;
 }
 
 
 #section4 div.recommend{
     width: 100%;
-    height: 360px;
+    height: 390px;
     position: absolute;
     background-color: white;
     left: 0;
@@ -392,10 +331,11 @@ header nav ul li button a {
 
 }
 
+
 #section5{
     width: 83.3%;
-    height: 40.4%;
-    top: 485px;
+    height: 47.1%;
+    top: 430px;
     left: 16.7%;
     position: absolute;
     border-top: 1px solid black;
@@ -418,7 +358,7 @@ header nav ul li button a {
 
 #section5 input{
     width: 100%;
-    height: 65%;
+    height: 73%;
     top: 40px;
     left: 0;
     position: absolute;

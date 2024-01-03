@@ -1,4 +1,4 @@
-package com.ohgiraffers.kimbaekjung.school.dto;
+package com.ohgiraffers.kimbaekjung.management.dto;
 
 public class manageDTO {
     private int studentCode;

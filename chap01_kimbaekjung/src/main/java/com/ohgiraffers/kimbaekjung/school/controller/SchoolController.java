@@ -3,7 +3,7 @@ package com.ohgiraffers.kimbaekjung.school.controller;
 
 import com.ohgiraffers.kimbaekjung.school.dto.NotificationDTO;
 import com.ohgiraffers.kimbaekjung.school.dto.SchoolDTO;
-import com.ohgiraffers.kimbaekjung.school.dto.manageDTO;
+import com.ohgiraffers.kimbaekjung.management.dto.manageDTO;
 import com.ohgiraffers.kimbaekjung.school.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,14 +29,6 @@ public class SchoolController {
         return mv;
     }
 
-    @GetMapping("student_manage")
-    public ModelAndView pickName(ModelAndView mv){
-        List<manageDTO> picks = schoolService.pickName();
-        mv.addObject("picks",picks);
-        mv.setViewName("/management/student_manage");
-
-        return mv;
-    }
 
     @GetMapping("call_info_notification")
     public ModelAndView notifi(ModelAndView mv){

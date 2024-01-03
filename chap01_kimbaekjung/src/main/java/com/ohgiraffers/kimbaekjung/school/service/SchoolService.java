@@ -2,8 +2,6 @@ package com.ohgiraffers.kimbaekjung.school.service;
 
 import com.ohgiraffers.kimbaekjung.school.dto.NotificationDTO;
 import com.ohgiraffers.kimbaekjung.school.dto.SchoolDTO;
-import com.ohgiraffers.kimbaekjung.school.dto.manageDTO;
-import com.ohgiraffers.kimbaekjung.school.model.ManageDAO;
 import com.ohgiraffers.kimbaekjung.school.model.NotificationDAO;
 import com.ohgiraffers.kimbaekjung.school.model.SchoolDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +17,7 @@ public class SchoolService {
     @Autowired
     private NotificationDAO notificationDAO;
 
-    @Autowired
-    private ManageDAO manageDAO;
+
 
     public List<SchoolDTO> oneName() {
         List<SchoolDTO> nameOne= schoolDAO.oneName();
@@ -35,9 +32,5 @@ public class SchoolService {
         return titles;
     }
 
-    public List<manageDTO> pickName() {
-        List<manageDTO> picks = manageDAO.picks();
 
-        return picks;
-    }
 }
