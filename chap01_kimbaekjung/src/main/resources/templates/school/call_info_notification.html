@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/css0/myGlobal.css">
-    <link rel="stylesheet" href="/css0/call_notification.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <title>학교 종이 땡땡땡</title>
+  <link rel="stylesheet" href="/css0/myGlobal.css">
+  <link rel="stylesheet" href="/css0/call_notification.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="icon" type="image/png" href="/favicon/favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
 <header class="navbox">
   <nav>
     <h1>
-      <button class="main">
-        <a href="#">학교종이 땡땡땡</a>
+      <button class="main" onclick="location.href='/main/main'">
+        학교종이 땡땡땡
       </button>
     </h1>
     <ul>
       <li>
-        <button class="ranking">
-          <a href="#">랭킹</a>
+        <button class="ranking" onclick="location.href='/rank/rank'">
+          랭킹
         </button>
       </li>
       <li>
-        <button class="calendar">
-          <a href="#">캘린더</a>
+        <button class="calendar" onclick="location.href='/calendar/calendar'">
+          캘린더
         </button>
       </li>
       <li>
@@ -110,15 +113,28 @@
     </div>
   </div>
 
-<!--  -->
+  <!--  -->
+  <!--  <section class="namelist1" th:each="title1 : ${titles}">-->
+  <!--    <div id="special1" th:text="${title1.code}"></div>-->
+  <!--    <button onclick="location.href='/school/one_noti'" id="special2" th:text="${title1.name}"></button>-->
+  <!--    <div id="special3">관리자</div>-->
+  <!--    <div id="special4" th:text="${#dates.format(title1.noticeDate, 'yyyy.MM.dd')}"></div>-->
+  <!--  </section>-->
+  <!--  th:fragment="mainFragment"-->
   <section class="namelist1" th:each="title1 : ${titles}">
     <div id="special1" th:text="${title1.code}"></div>
-    <button id="special2" th:text="${title1.name}"></button>
+    <div id="special2">
+      <a th:href="@{/school/one_noti(notiCode=${title1.code},
+         notiName=${title1.name},
+         notiContent=${title1.comment},
+         notiDate=${#dates.format(title1.noticeDate, 'yyyy.MM.dd')})}"
+         th:text="${title1.name}"></a></div>
     <div id="special3">관리자</div>
     <div id="special4" th:text="${#dates.format(title1.noticeDate, 'yyyy.MM.dd')}"></div>
   </section>
 
-<!--&&&&&&&&&&&&&&&&&-->
+
+  <!--&&&&&&&&&&&&&&&&&-->
   <div class="paging">
     <i class="bi-chevron-double-left" id="firstPage"></i>
     <i class="bi-chevron-left" id="prevPage"></i>
@@ -134,34 +150,36 @@
   </div>
 
   <!--************페이지 넘김 버튼**************-->
-<!--  <div id="allPageBtn">-->
-<!--    <div id="leftBtns">-->
-<!--      <button style="border: none">-->
-<!--        <img src="/img/doubleArrow.svg">-->
-<!--      </button>-->
+  <!--  <div id="allPageBtn">-->
+  <!--    <div id="leftBtns">-->
+  <!--      <button style="border: none">-->
+  <!--        <img src="/img/doubleArrow.svg">-->
+  <!--      </button>-->
 
-<!--      <button style="border: none">-->
-<!--        <img src="/img/arrow.svg">-->
-<!--      </button>-->
-<!--    </div>-->
+  <!--      <button style="border: none">-->
+  <!--        <img src="/img/arrow.svg">-->
+  <!--      </button>-->
+  <!--    </div>-->
 
-<!--    <a href="#">1</a>-->
+  <!--    <a href="#">1</a>-->
 
-<!--    <div id="rightBtns">-->
-<!--      <button style="border: none">-->
-<!--        <img src="/img/arrow.svg" style="transform: rotate(180deg)">-->
-<!--      </button>-->
+  <!--    <div id="rightBtns">-->
+  <!--      <button style="border: none">-->
+  <!--        <img src="/img/arrow.svg" style="transform: rotate(180deg)">-->
+  <!--      </button>-->
 
-<!--      <button style="border: none">-->
-<!--        <img src="/img/doubleArrow.svg" style="transform: rotate(180deg)">-->
-<!--      </button>-->
-<!--    </div>-->
+  <!--      <button style="border: none">-->
+  <!--        <img src="/img/doubleArrow.svg" style="transform: rotate(180deg)">-->
+  <!--      </button>-->
+  <!--    </div>-->
 
-<!--  </div>-->
-<!--  ****************검색기능***************-->
+  <!--  </div>-->
+  <!--  ****************검색기능***************-->
   <div id="research">
-    <input type="text" id="search">
-    <button>검색</button>
+    <form action="/school/searchNoti" method="post">
+      <input type="text" name="keyword" id="search">
+      <button type="submit">검색</button>
+    </form>
   </div>
 </article>
 
@@ -184,8 +202,8 @@
 
 <script>
   /* 페이지 네이션 */
-  const countPerPage = 2; // 페이지 당 데이터 수
-  const showPageCnt = 2; // 화면에 보일 페이지 번호 개수
+  const countPerPage = 10; // 페이지 당 데이터 수
+  const showPageCnt = 5; // 화면에 보일 페이지 번호 개수
   const totalRows = document.querySelectorAll('.namelist1').length; // 총 데이터 수
   const totalPage = Math.ceil(totalRows / countPerPage); // 총 페이지 수, Math.ceil : 소수점 자리에서 올림 기능
 
